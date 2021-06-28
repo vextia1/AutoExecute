@@ -1,13 +1,28 @@
 local Module = { }
+local ModuleG;
+
+Module.CheckGame = function(PlaceID)
+   for z, = 1,#ModuleG do
+      local x = z
+      
+      if game.PlaceId == (ModuleG[x].PlaceID) or game.PlaceId == (Module[z].PlaceID) then
+         return (ModuleG[x].PlaceID) or (Module[z].PlaceID)
+      end
+   end
+end
 
 Module.GetProject = function(FileName)
+   
+   local UrlString = ("https://raw.githubusercontent.com/misanthropic2005/AutoExecute/main/FileLibrary/" .. FileName .. ".lua")
+   
    return loadstring(syn.request({
-     Url = "" .. FileName
+     Url = UrlString,
      Method = "GET"
    }).Body)
 end
 
-local ModuleG = {
- { PlaceID = 1, Function = function() return Module.GetProject(File) end },
- 
+ModuleG = {
+ { PlaceID = 417267366, Function = function() Module.GetProject("DHRP") end },
+ { PlaceID = 2, Function = function() return Module.GetProject(FileTwo) end }
 }
+
