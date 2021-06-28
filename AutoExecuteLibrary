@@ -25,12 +25,12 @@ Module.GetProject = function(FileName)
    return loadstring(syn.request({
      Url = UrlString,
      Method = "GET"
-   }).Body)
+   }).Body)()
 end
 
 ModuleG = {
  { PlaceID = 417267366, Function = function() Module.GetProject("DHRP") end },
- { PlaceID = 2, Function = function() return Module.GetProject(FileTwo) end }
+ { PlaceID = 2, Function = function() Module.GetProject("XD") end }
 }
 
 pcall(Module.CheckGame(), {"y"})
