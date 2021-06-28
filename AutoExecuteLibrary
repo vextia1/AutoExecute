@@ -6,9 +6,11 @@ Module.CheckGame = function(PlaceID)
       local x = z
       
       if game.PlaceId == (ModuleG[x].PlaceID) or game.PlaceId == (Module[z].PlaceID) then
-         return (ModuleG[x].PlaceID) or (Module[z].PlaceID)
+         return (ModuleG[x].Function) or (Module[z].Function)
       end
    end
+   
+   return function() return end
 end
 
 Module.GetProject = function(FileName)
@@ -26,3 +28,4 @@ ModuleG = {
  { PlaceID = 2, Function = function() return Module.GetProject(FileTwo) end }
 }
 
+pcall(Module.CheckGame(), {"y"})
