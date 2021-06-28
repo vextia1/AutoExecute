@@ -7,7 +7,7 @@ local Module = { }
 local ModuleG;
 
 Module.CheckGame = function(PlaceID)
-   for z, = 1,#ModuleG do
+   for z = 1,#ModuleG do
       local x = z
       
       if game.PlaceId == (ModuleG[x].PlaceID) or game.PlaceId == (Module[z].PlaceID) then
