@@ -1,0 +1,13 @@
+local Module = { }
+
+Module.GetProject = function(FileName)
+   return loadstring(syn.request({
+     Url = "" .. FileName
+     Method = "GET"
+   }).Body)
+end
+
+local ModuleG = {
+ { PlaceID = 1, Function = function() return Module.GetProject(File) end },
+ 
+}
