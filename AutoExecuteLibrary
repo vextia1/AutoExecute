@@ -1,6 +1,6 @@
 if not game.IsLoaded then
    game.Loaded:Wait()
-   repeat wait() until game.Players.LocalPlayer end
+   repeat wait() until game.Players.LocalPlayer
 end
 
 local Module = { }
